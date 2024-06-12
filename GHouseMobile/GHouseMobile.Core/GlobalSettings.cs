@@ -21,7 +21,7 @@ namespace GHouseMobile.Core
         readonly static string _defaultCommentEndpoint;
         readonly static string _defaultCheckUserEndpoint;
 
-        const string _defaultRollbarAccessToken = "e12ca28ae4854d24a4043a632946fb5a";
+        const string _defaultRollbarAccessToken = "";
         const string _defaultRollbarEnvironment = "Development"; //TODO: Release
         const int _defaultRollbarTimeoutSeconds = 10;
 
