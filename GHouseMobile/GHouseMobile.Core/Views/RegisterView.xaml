@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:GHouseMobile.Core.Controls" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="GHouseMobile.Core.Views.RegisterView"
+             NavigationPage.HasNavigationBar="true">
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                <controls:GHFrame HeightRequest="250" BackgroundColor="{DynamicResource PrimaryColor}">
+                    <lottie:AnimationView Animation="logo.json"
+                                      AutoPlay="true"                                    
+                                      Loop="true" />
+                </controls:GHFrame>
+            </StackLayout>
+
+            <StackLayout Margin="10,180,10,0" HorizontalOptions="FillAndExpand">
+                <Grid Grid.Row="1">
+                    <controls:GHFrame Grid.Row="0" x:Name="DOBFrame" HeightRequest="300" HasShadow="True">
+
+                        <StackLayout Margin="15,20">
+                            <Grid Margin="0,15">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <controls:GHLabel Padding="0,0,0,30" Grid.ColumnSpan="3" FontAttributes="Bold"
+                                                  Text="What's Your Date of Birth?"/>
+
+                                <controls:GHFrame Grid.Row="1" Grid.ColumnSpan="3" CornerRadius="20" BorderColor="{DynamicResource BorderColor}">
+                                    <controls:GHDatePicker Date="{Binding UserInfo.DateofBirth}" />
+                                </controls:GHFrame>
+
+                            </Grid>
+                        </StackLayout>
+
+                    </controls:GHFrame>
+
+                    <controls:GHFrame IsVisible="false" Grid.Row="0" x:Name="GenderFrame" HeightRequest="300" HasShadow="True">
+
+                        <StackLayout Margin="15,20">
+                            <Grid Margin="0,15">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <controls:GHLabel Padding="0,0,0,30" Grid.ColumnSpan="3" FontAttributes="Bold" Text="What's Your Gender?"/>
+                                <controls:GHFrame Grid.Row="1" Grid.ColumnSpan="3" CornerRadius="10" BorderColor="{DynamicResource BorderColor}">
+                                    <!--::TODO::-->
+                                </controls:GHFrame>
+
+                            </Grid>
+                        </StackLayout>
+
+                    </controls:GHFrame>
+
+                    <controls:GHFrame IsVisible="false" Grid.Row="0" x:Name="PasswordFrame" HeightRequest="300" HasShadow="True">
+
+                        <StackLayout Margin="15,20">
+                            <Grid Margin="0,15">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <controls:GHLabel Padding="0,0,0,30" Grid.ColumnSpan="3" FontAttributes="Bold" Text="Choose a password"/>
+                                <controls:GHFrame Grid.Row="1" Grid.ColumnSpan="3" CornerRadius="20" BorderColor="{DynamicResource BorderColor}">
+                                    <controls:GHEntry Text="{Binding UserInfo.Password}"/>
+                                </controls:GHFrame>
+
+                            </Grid>
+                        </StackLayout>
+
+                    </controls:GHFrame>
+
+                    <controls:GHFrame IsVisible="false" Grid.Row="0" x:Name="EmailFrame" HeightRequest="300" HasShadow="True">
+
+                        <StackLayout Margin="15,20">
+                            <Grid Margin="0,15">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <controls:GHLabel Padding="0,0,0,30" Grid.ColumnSpan="3" FontAttributes="Bold" Text="Enter your email"/>
+                                <controls:GHFrame Grid.Row="1" Grid.ColumnSpan="3" CornerRadius="20" BorderColor="{DynamicResource BorderColor}">
+                                    <controls:GHEntry Keyboard="Email" Text="{Binding UserInfo.Email}"/>
+                                </controls:GHFrame>
+
+                            </Grid>
+                        </StackLayout>
+
+                    </controls:GHFrame>
+
+                    <controls:GHFrame IsVisible="false" Grid.Row="0" x:Name="MobileFrame" HeightRequest="300" HasShadow="True">
+
+                        <StackLayout Margin="15,20">
+                            <Grid Margin="0,15">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <controls:GHLabel Padding="0,0,0,30" Grid.ColumnSpan="3" FontAttributes="Bold" Text="Enter your mobile number"/>
+                                <controls:GHFrame Grid.Row="1" Grid.ColumnSpan="3" CornerRadius="20" BorderColor="{DynamicResource BorderColor}">
+                                    <controls:GHEntry Text="{Binding UserInfo.MobileNumber}" Keyboard="Telephone"/>
+                                </controls:GHFrame>
+
+                            </Grid>
+                        </StackLayout>
+
+                    </controls:GHFrame>
+                </Grid>
+
+            </StackLayout>
+            <Grid Grid.Row="3" x:Name="GridNext" IsVisible="True" Margin="0,0,0,0" VerticalOptions="EndAndExpand" HeightRequest="60">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Grid.GestureRecognizers>
+                <controls:GHFrame BackgroundColor="{DynamicResource PrimaryColor}">
+                    <controls:GHLabel x:Name="Next" Text="NEXT" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                               TextColor="White"
+                               />
+                </controls:GHFrame>
+            </Grid>
+            <Grid Grid.Row="3" x:Name="GridSubmit" IsVisible="False" Margin="0,0,0,0" VerticalOptions="EndAndExpand" HeightRequest="60">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                </Grid.GestureRecognizers>
+                <controls:GHFrame BackgroundColor="{DynamicResource PrimaryColor}">
+                    <controls:GHLabel x:Name="Submit" Text="SUBMIT" VerticalOptions="CenterAndExpand"
+                                       HorizontalOptions="CenterAndExpand"
+                               TextColor="White"
+                               />
+                </controls:GHFrame>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

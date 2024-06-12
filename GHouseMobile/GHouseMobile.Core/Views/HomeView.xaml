@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:GHouseMobile.Core.Controls"
+             xmlns:behavior="clr-namespace:GHouseMobile.Core.Behaviors"
+             x:Class="GHouseMobile.Core.Views.HomeView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <RelativeLayout Padding="0">
+            <Image Opacity="0.05"
+            Source="IndiaMap" Aspect="AspectFill"
+               RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+            <FlexLayout Direction="Column" AlignItems="End">
+                <controls:GHPicker
+                     Title="English">
+                    <controls:GHPicker.Items>
+                        <x:String>English</x:String>
+                        <x:String>हिन्दी</x:String>
+                        <x:String>ଓଡିଆ</x:String>
+                        <x:String>ਪੰਜਾਬੀ</x:String>
+                    </controls:GHPicker.Items>
+                </controls:GHPicker>
+            </FlexLayout>
+            <FlexLayout Direction="Column">
+                <controls:GHImage FlexLayout.AlignSelf="Center" HeightRequest="200" Source="logo_transparent"/>
+                <controls:GHLabel FlexLayout.AlignSelf="Center" Margin="0,0,0,30" 
+                              FontSize="Title" Text="Welcome!"/>
+                <controls:GHLabel FlexLayout.AlignSelf="Start" Margin="0,0,0,10" FontSize="Subtitle" 
+                              Text="Enter mobile number to continue ..."/>
+                <controls:GHEntry Placeholder="{Binding UserInfo.MobileNumber.PlaceHolder}" ErrorText="{Binding UserInfo.MobileNumber.ErrorMessage}"
+                                     BorderErrorColor="{DynamicResource ErrorColor}"
+                                     Text="{Binding UserInfo.MobileNumber.Value}"
+                              IsBorderErrorVisible="True">
+                    <controls:GHEntry.Behaviors>
+                        <behavior:EntryValidationBehavior x:Name="TextValidator"
+                                                          IsValid="{Binding UserInfo.MobileNumber.IsValid}" />
+                    </controls:GHEntry.Behaviors>
+                </controls:GHEntry>
+                <controls:GHButton Command="{Binding ValidateUser}" IsEnabled="{Binding UserInfo.MobileNumber.IsValid}"
+                                   FlexLayout.AlignSelf="End" 
+                                   BackgroundColor="{DynamicResource TransparentColor}" 
+                               TextColor="{DynamicResource DarkPrimaryColor}"  Text="Continue ->">
+                    <controls:GHButton.Triggers>
+                        <DataTrigger TargetType="controls:GHButton"
+                                     Binding="{Binding Source={x:Reference TextValidator}, 
+                            Path=IsValid}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                        <DataTrigger TargetType="controls:GHButton"
+                                     Binding="{Binding Source={x:Reference TextValidator}, 
+                            Path=IsValid}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </controls:GHButton.Triggers>
+                </controls:GHButton>
+            </FlexLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

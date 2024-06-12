@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:GHouseMobile.Core.Controls"
+             x:Class="GHouseMobile.Core.Controls.GHGradientButton"
+             x:Name="This">
+    <Frame CornerRadius="38"
+                   IsClippedToBounds="True"
+                   Padding="0">
+        <Grid>
+            <controls:GHGradientView InitialColor="#03A9F4"
+                                           FinalColor="#B3E5FC"
+                                           Direction="Horizontal"/>
+            <Label Text="{Binding Text, Source={x:Reference This}}"
+                           TextColor="White"
+                           Margin="24,20"
+                           HorizontalTextAlignment="Center"
+                           Style="{StaticResource TextTitle}" />
+        </Grid>
+    </Frame>
+</ContentView>

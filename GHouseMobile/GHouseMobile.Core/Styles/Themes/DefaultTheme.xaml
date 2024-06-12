@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:GHouseMobile.Core.Controls"
+             x:Class="GHouseMobile.Core.Styles.Themes.DefaultTheme">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Styles/GHFonts.xaml"/>
+        <ResourceDictionary Source="/Styles/GHTexts.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Static Resources -->
+    <Color x:Key="BorderColor">#C0C0C0</Color>
+    <Color x:Key="TransparentColor">Transparent</Color>
+    <x:String x:Key="ErrorColor">Red</x:String>
+
+    <Style TargetType="{x:Type controls:GHLabel}">
+        <Setter Property="TextColor" Value="{DynamicResource DarkPrimaryColor}"/>
+    </Style>
+    <Style TargetType="{x:Type controls:GHEntry}">
+        <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColor}"/>
+        <Setter Property="PlaceholderColor" Value="{DynamicResource LightPrimaryColor}"/>
+    </Style>
+    <Style TargetType="{x:Type controls:GHButton}">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource TextSecondaryColor}"/>
+    </Style>
+    <Style TargetType="{x:Type controls:GHPicker}">
+        <Setter Property="TitleColor" Value="{DynamicResource DarkPrimaryColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
+    </Style>
+    <Style TargetType="{x:Type Label}">
+        <Setter Property="TextColor" Value="{DynamicResource DarkPrimaryColor}"/>
+    </Style>
+    <Style TargetType="{x:Type Entry}">
+        <Setter Property="TextColor" Value="{DynamicResource TextPrimaryColor}"/>
+        <Setter Property="PlaceholderColor" Value="{DynamicResource LightPrimaryColor}"/>
+    </Style>
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource TextSecondaryColor}"/>
+    </Style>
+    <Style TargetType="{x:Type Picker}">
+        <Setter Property="TitleColor" Value="{DynamicResource DarkPrimaryColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
+    </Style>
+
+    <!-- Dynamic Resources -->
+    <Color x:Key="TextPrimaryColor">#212121</Color>
+    <Color x:Key="TextSecondaryColor">White</Color>
+    <Color x:Key="AccentColor">#7C4DFF</Color>
+    <Color x:Key="PrimaryColor">#9C27B0</Color>
+    <Color x:Key="DarkPrimaryColor">#7B1FA2</Color>
+    <Color x:Key="LightPrimaryColor">#E1BEE7</Color>
+    <Color x:Key="DividerColor">#BDBDBD</Color>
+    
+</ResourceDictionary>

@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/GHouseMobile/GHouseMobile.Android/bin/Debug
+/GHouseMobile/GHouseMobile.Android/obj
+/GHouseMobile/GHouseMobile.Android/GHouseMobile.Android.csproj.user
+/GHouseMobile/GHouseMobile.Core/bin/Debug/netstandard2.0
+/GHouseMobile/GHouseMobile.Core/obj
+/GHouseMobile/GHouseMobile.iOS/bin/iPhone/Debug
+/GHouseMobile/GHouseMobile.iOS/obj
+/GHouseMobile/GHouseMobile.UWP/obj
+/UpgradeLog.htm

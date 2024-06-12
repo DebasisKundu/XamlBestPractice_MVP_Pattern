@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:controls="clr-namespace:GHouseMobile.Core.Controls"
+             xmlns:validate="clr-namespace:GHouseMobile.Core.Behaviors"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             mc:Ignorable="d"
+             x:Class="GHouseMobile.Core.Views.LoginView"
+            NavigationPage.HasNavigationBar="False"
+             >
+
+    <ContentPage.Content>
+        <Grid>
+
+            <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                <controls:GHFrame HeightRequest="250" BackgroundColor="{DynamicResource PrimaryColor}">
+                    <lottie:AnimationView Animation="logo.json"
+                                      AutoPlay="true"                                    
+                                      Loop="true" />
+                </controls:GHFrame>
+            </StackLayout>
+
+            <ScrollView>
+                <StackLayout Margin="10,180,10,0" HorizontalOptions="FillAndExpand">
+
+                    <controls:GHFrame x:Name="Root" ScaleAnimation="True" HeightRequest="390" HasShadow="True">
+                        <StackLayout>
+                            <StackLayout Margin="0,10">
+                                <!--<controls:GHLabel Text="SIGN IN" HorizontalOptions="CenterAndExpand"
+                                   FontAttributes="Bold"/>-->
+
+                                <StackLayout Padding="0" Margin="15,15">
+                                    <controls:GHFrame BorderColor="{StaticResource BorderColor}"
+                                       HorizontalOptions="FillAndExpand"
+                                        >
+                                        <StackLayout Orientation="Horizontal">
+                                            <controls:GHFrame HeightRequest="40" WidthRequest="40"   Margin="5">
+                                                <lottie:AnimationView Animation="email.json"
+                                      AutoPlay="True"                                    
+                                      Loop="False" />
+                                            </controls:GHFrame>
+
+                                            <controls:GHEntry Keyboard="Telephone" Placeholder="Mobile Number" 
+                                                      HorizontalOptions="FillAndExpand" Margin="0,0,20,0">
+                                            </controls:GHEntry>
+                                        </StackLayout>
+                                    </controls:GHFrame>
+
+                                    <controls:GHFrame BorderColor="{StaticResource BorderColor}" Margin="0,15,0,0"
+                                        HorizontalOptions="FillAndExpand"  >
+                                        <StackLayout Orientation="Horizontal">
+                                            <controls:GHFrame HeightRequest="40" WidthRequest="40"   Margin="5">
+                                                <lottie:AnimationView Animation="email.json"
+                                      AutoPlay="True"                                    
+                                      Loop="False" />
+                                            </controls:GHFrame>
+
+                                            <controls:GHEntry Placeholder="Password" IsPassword="True"
+                                                      FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                        </StackLayout>
+                                    </controls:GHFrame>
+
+                                    <StackLayout Margin="15,0"  Orientation="Horizontal">
+                                        <controls:GHLabel TextDecorations="Underline" Text="Forgot Password?"
+                                       FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontSize="Small"
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                    </StackLayout>
+                                    <StackLayout Margin="30">
+                                        <controls:GHButton Text="SIGN IN"
+                                                />  
+                                    </StackLayout>
+
+                                </StackLayout>
+
+                            </StackLayout>
+                            <Grid>
+                                <!--<controls:GHPicker Margin="15,0,0,0" x:Name="Picker" Title="Select Language"
+                                             VerticalOptions="EndAndExpand"  HorizontalOptions="StartAndExpand"/>-->
+                                <controls:GHFrame BorderColor="{DynamicResource BorderColor}" Margin="15,15" CornerRadius="30">
+                                    <controls:GHPicker Margin="5,0,5,0" HorizontalOptions="FillAndExpand"
+                                          VerticalOptions="EndAndExpand"
+                     Title="Select Language">
+                                        <controls:GHPicker.Items>
+                                            <x:String>English</x:String>
+                                            <x:String>हिन्दी</x:String>
+                                            <x:String>ଓଡିଆ</x:String>
+                                            <x:String>ਪੰਜਾਬੀ</x:String>
+                                        </controls:GHPicker.Items>
+                                    </controls:GHPicker>
+                                </controls:GHFrame>
+                            </Grid>
+                        </StackLayout>
+                    </controls:GHFrame>
+                    <StackLayout VerticalOptions="EndAndExpand" Margin="0,0,0,0">
+                        <controls:GHButton Command="{Binding NavigateToRegisterCommand}" BackgroundColor="{StaticResource TransparentColor}"
+                                           TextColor="{DynamicResource TextPrimaryColor}"  Text="Don't Have Account Login? SignUp" VerticalOptions="EndAndExpand" HorizontalOptions="Fill"
+                                       FontAttributes="Bold" FontSize="Small"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
